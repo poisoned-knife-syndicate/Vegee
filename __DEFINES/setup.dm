@@ -785,6 +785,7 @@ SEE_PIXELS	256
 #define MAT_WOOD		"$wood"
 #define MAT_BRASS   	"$brass"
 #define MAT_RALLOY   	"$ralloy"
+#define MAT_ICE			"$ice"
 
 //Admin Permissions
 //Please don't edit these values without speaking to [current /vg/ host here] first
@@ -893,6 +894,7 @@ SEE_PIXELS	256
 // for secHUDs and medHUDs and variants. The number is the location of the image on the list hud_list of humans.
 #define HEALTH_HUD          "health" // a simple line rounding the mob's number health
 #define STATUS_HUD          "status" // alive, dead, diseased, etc.
+#define RECORD_HUD			"record" // what medbay has set your records to
 #define ID_HUD              "id" // the job asigned to your ID
 #define WANTED_HUD          "wanted" // wanted, released, parroled, security status
 #define IMPLOYAL_HUD		"imployal" // loyality implant
