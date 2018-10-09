@@ -270,21 +270,21 @@ var/list/camera_messages = list()
 		var/key = "\ref[W]"
 		if(camera_messages.len > MAX_CAMERA_MESSAGES)
 			camera_messages.Cut(1, 2) // Removes the oldest element
-		camera_messages[key] = list("text" = info, "title" = W.name)
+			camera_messages[key] = list("[lhtml_encode(key)]" = info, "[lhtml_encode(W.name)]" = W.name) //Нужно будет потестить, не представляю как работает эта обнова.
 
 		for(var/mob/living/silicon/ai/O in living_mob_list)
 			if(!O.client)
 				continue
 			if(U.name == "Unknown")
-				to_chat(O, "<span class='name'>[U]</span> holds <a href='byond://?src=\ref[src];message_id=[key]'>[W]</a> up to one of your cameras ...")
+				to_chat(O, "<span class='name'>[U]</span> holds <a href='byond://?src=\ref[src];message_id=[lhtml_encode(key)]'>[W]</a> up to one of your cameras ...") //Нужно будет потестить, не представляю как работает эта обнова.
 			else
-				to_chat(O, "<span class='name'><a href='byond://?src=\ref[O];track2=\ref[O];track=\ref[U]'>[U]</a></span> holds <a href='byond://?src=\ref[src];message_id=[key]'>[W]</a> up to one of your cameras ...")
+				to_chat(O, "<span class='name'><a href='byond://?src=\ref[O];track2=\ref[O];track=\ref[U]'>[U]</a></span> holds <a href='byond://?src=\ref[src];message_id=[lhtml_encode(key)]'>[W]</a> up to one of your cameras ...") //Нужно будет потестить, не представляю как работает эта обнова.
 
 		for(var/mob/O in player_list)
 			if (istype(O.machine, /obj/machinery/computer/security))
 				var/obj/machinery/computer/security/S = O.machine
 				if (S.current == src)
-					to_chat(O, "[U] holds <a href='byond://?src=\ref[src];message_id=[key]'>[W]</a> up to one of the cameras ...")
+					to_chat(O, "[U] holds <a href='byond://?src=\ref[src];message_id=[lhtml_encode(key)]'>[W]</a> up to one of the cameras ...")
 	else
 		..()
 	return

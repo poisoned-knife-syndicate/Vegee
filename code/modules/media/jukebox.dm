@@ -4,13 +4,31 @@
  * By N3X15
  *******************************/
 
+#define JUKEMODE_SHUFFLE     1 // Default
+#define JUKEMODE_REPEAT_SONG 2
+#define JUKEMODE_PLAY_ONCE   3 // Play, then stop.
+#define JUKEMODE_COUNT       3
+
+#define JUKEBOX_SCREEN_MAIN     1 // Default
+#define JUKEBOX_SCREEN_PAYMENT  2
+#define JUKEBOX_SCREEN_SETTINGS 3
+
+#define JUKEBOX_RELOAD_COOLDOWN 600 // 60s
+
+/datum/admins/verb/update_playlist()
+	set name = "Update Playlists"
+	set category = "Fun"
+	load_juke_playlists()
+
 var/global/global_playlists = list()
 /proc/load_juke_playlists()
 	if(!config.media_base_url)
 		return
 	for(var/playlist_id in list("bar", "jazz", "rock", "muzak", "emagged", "endgame", "clockwork", "vidyaone", "vidyatwo", "vidyathree", "vidyafour"))
-		var/url="[config.media_base_url]/index.php?playlist=[playlist_id]"
-		//testing("Updating playlist from [url]...")
+
+		var/url="[config.media_base_url]/jukebox.php?playlist=[playlist_id]"
+		testing("Updating playlist from [url]...")
+
 
 		//  Media Server 2 requires a secret key in order to tell the jukebox
 		// where the music files are. It's set in config with MEDIA_SECRET_KEY
@@ -45,8 +63,9 @@ var/global/global_playlists = list()
 		playlist = temp.Copy()
 
 	else
-		var/url="[config.media_base_url]/index.php?playlist=[playlist_id]"
-		//testing("[src] - Updating playlist from [url]...")
+
+		var/url="[config.media_base_url]/jukebox.php?playlist=[playlist_id]"
+		testing("[src] - Updating playlist from [url]...")
 
 		//  Media Server 2 requires a secret key in order to tell the jukebox
 		// where the music files are. It's set in config with MEDIA_SECRET_KEY

@@ -216,8 +216,8 @@
 		return success
 
 /proc/high_radiation_event()
-
-/* // Haha, this is way too laggy. I'll keep the prison break though.
+/*
+ // Haha, this is way too laggy. I'll keep the prison break though.
 	for(var/obj/machinery/light/L in world)
 		if(L.z != map.zMainStation)
 			continue

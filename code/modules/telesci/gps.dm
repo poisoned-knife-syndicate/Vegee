@@ -57,7 +57,7 @@ var/list/SPS_list = list()
 	ui_interact(user)
 
 /obj/item/device/gps/examine(mob/user)
-	if(Adjacent(user) || isobserver(user))
+	if (Adjacent(user) || isobserver(user))
 		attack_self(user)
 	else
 		..()
@@ -108,7 +108,7 @@ var/list/SPS_list = list()
 		update_icon()
 		return TRUE
 	if(href_list["tag"])
-		if(isobserver(usr))
+		if (isobserver(usr))
 			to_chat(usr, "No way.")
 			return FALSE
 		if(!builtin && (usr.get_active_hand() != src || usr.incapacitated())) //no silicons allowed
@@ -116,13 +116,12 @@ var/list/SPS_list = list()
 			return TRUE
 
 		var/a = input("Please enter desired tag.", name, gpstag) as text|null
-		if(!a) //what a check
+		if (!a) //what a check
 			return TRUE
 
 		if(!builtin && (usr.get_active_hand() != src || usr.incapacitated())) //second check in case some chucklefuck drops the GPS while typing the tag
 			to_chat(usr, "<span class = 'caution'>The GPS needs to be kept in your active hand!</span>")
 			return TRUE
-		a = strict_ascii(a)
 		if(length(a) < 4 || length(a) > 5)
 			to_chat(usr, "<span class = 'caution'>The tag must be between four and five characters long!</span>")
 		else

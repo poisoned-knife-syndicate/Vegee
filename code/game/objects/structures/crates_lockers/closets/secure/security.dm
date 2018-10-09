@@ -11,10 +11,8 @@
 	New()
 		..()
 		sleep(2)
-		if(prob(50))
-			new /obj/item/weapon/storage/backpack/captain(src)
-		else
-			new /obj/item/weapon/storage/backpack/satchel_cap(src)
+		new /obj/item/weapon/storage/backpack/captain(src)
+		new /obj/item/weapon/storage/backpack/satchel_cap(src)
 		new /obj/item/clothing/suit/captunic(src)
 		new /obj/item/clothing/suit/storage/capjacket(src)
 		new /obj/item/clothing/head/helmet/cap(src)
@@ -140,6 +138,7 @@
 	new /obj/item/weapon/grenade/flashbang(src)
 	new /obj/item/weapon/gun/energy/taser(src)
 	new /obj/item/weapon/card/debit/preferred/department(src, "Security")
+	new /obj/item/clothing/accessory/storage/black_vest(src)
 
 /obj/structure/closet/secure_closet/warden
 	name = "Warden's Locker"
@@ -150,7 +149,6 @@
 	icon_opened = "wardensecureopen"
 	icon_broken = "wardensecurebroken"
 	icon_off = "wardensecureoff"
-
 
 /obj/structure/closet/secure_closet/warden/New()
 	..()
@@ -181,6 +179,7 @@
 	new /obj/item/weapon/grenade/flashbang(src)
 	new /obj/item/clothing/accessory/holster/knife/boot/preloaded/tactical(src)
 	new /obj/item/weapon/gun/energy/taser(src)
+	new /obj/item/clothing/accessory/storage/black_vest(src)
 
 /obj/structure/closet/secure_closet/security
 	name = "Security Officer's Locker"
@@ -218,6 +217,7 @@
 	new /obj/item/device/hailer(src) //wonder if vg would spam this
 	new /obj/item/clothing/gloves/black(src)
 	new /obj/item/device/gps/secure(src)
+	new /obj/item/clothing/accessory/storage/black_vest(src)
 
 /obj/structure/closet/secure_closet/security/cargo
 
@@ -285,6 +285,7 @@
 		new /obj/item/binoculars(src)
 		new /obj/item/weapon/storage/box/surveillance(src)
 		new /obj/item/device/handtv(src)
+		new /obj/item/clothing/accessory/storage/black_vest(src)
 		return
 
 /obj/structure/closet/secure_closet/detective/update_icon()
