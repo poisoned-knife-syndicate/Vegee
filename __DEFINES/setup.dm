@@ -559,10 +559,11 @@ var/list/global_mutations = list() // list of hidden mutation things
 #define I_HURT		"hurt"
 
 //I hate adding defines like this but I'd much rather deal with bitflags than lists and string searches
-#define BRUTELOSS 1
-#define FIRELOSS 2
-#define TOXLOSS 4
-#define OXYLOSS 8
+#define SUICIDE_ACT_BRUTELOSS 1
+#define SUICIDE_ACT_FIRELOSS 2
+#define SUICIDE_ACT_TOXLOSS 4
+#define SUICIDE_ACT_OXYLOSS 8
+#define SUICIDE_ACT_CUSTOM 16
 
 //Bitflags defining which status effects could be or are inflicted on a mob
 #define CANSTUN		1
@@ -896,6 +897,7 @@ SEE_PIXELS	256
 #define STATUS_HUD_OOC		"status_ooc" // STATUS_HUD without virus db check for someone being ill.
 #define DIAG_HEALTH_HUD		"diag_health" // Diagnostic HUD - health bar
 #define DIAG_CELL_HUD		"diag_cell" // Diagnostic HUD - power cell status for cyborgs, mechs
+#define CONSTRUCT_HUD		"const_health" // Artificer HUD
 
 // Hypothermia - using the swiss staging system. - called by the proc undergoing_hypothermia() in handle_hypothermia.dm
 #define NO_HYPOTHERMIA			0	// >35C   - Fine

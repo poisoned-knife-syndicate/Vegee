@@ -361,7 +361,7 @@ For vending packs, see vending_packs.dm*/
 		var/timeout = world.time + 600
 
 		var/reason = copytext(sanitize(input(usr, "Reason:", "Why do you require this item?", "") as null|text), 1, REASON_LEN)
-
+		//var/reason = stripped_input(usr,"Reason:","Why do you require this item?","",REASON_LEN)
 		if(world.time > timeout)
 			return
 		if(!reason)
@@ -588,6 +588,7 @@ For vending packs, see vending_packs.dm*/
 			return
 
 		var/reason = copytext(sanitize(input(usr,"Reason:","Why do you require this item?","") as null|text),1,REASON_LEN)
+		//var/reason = stripped_input(usr,"Reason:","Why do you require this item?","",REASON_LEN)
 
 		if(world.time > timeout)
 			return
